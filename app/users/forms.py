@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
-from models import User
+from wtforms import SubmitField, StringField, PasswordField, BooleanField
+from wtforms.validators import DataRequired, Length, EqualTo, Email, ValidationError
+from app.models import User
 
 
 class RegistrationForm(FlaskForm):
@@ -35,9 +35,3 @@ class LoginForm(FlaskForm):
                              validators=[DataRequired(), Length(min=8)])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
-
-class ExchangeForm(FlaskForm):
-    from_currency = SelectField('From Currency', choice=['USD', 'EUR'])
-    to_currency = SelectField('To Currency', choices=['JPY', 'BRL'])
-    amount = StringField('Amount', validators=[DataRequired()])
-    submit = SubmitField('Convert')

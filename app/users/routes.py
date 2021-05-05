@@ -1,30 +1,12 @@
-from flask import render_template, flash, redirect, url_for, request
-from flask_login import current_user, login_user, logout_user
-from flasksite import app, bcrypt, db
-from forms import RegistrationForm, LoginForm, ExchangeForm
-from models import User
+from flask_login import current_user, login_user, login_required, logout_user
+from flask import redirect, url_for, render_template, flash, request, Blueprint
+from app import bcrypt, db
+from app.models import User
+from app.users.forms import RegistrationForm, LoginForm
 
-posts = [
-            {'title': 'hellow',
-             'content': 'testing',
-             'author': 'mg',
-             'date_posted': '01-05-21',
-             }
-]
+users = Blueprint('users', __name__)
 
-@app.route('/')
-@app.route('/home')
-def home():
-    form = ExchangeForm()
-    return render_template('home.html', form=form, posts=posts)
-
-
-@app.route('/about')
-def about():
-    return render_template('about.html', title='About')
-
-
-@app.route("/register", methods=['GET', 'POST'])
+@users.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
@@ -39,7 +21,7 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route("/login", methods=['GET', 'POST'])
+@users.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
@@ -55,7 +37,7 @@ def login():
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
-@app.route('/logout')
+@users.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('home'))
