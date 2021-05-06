@@ -38,31 +38,27 @@ class Currency:
         """
         return self.currencyType
 
+    def getCurrencies(self) -> str:
+        endpoint = "latest.json"
+        app_id = '83c0f1eb005b4de194c05201afe59129'
+        base = self.getCurrencyType()  # Gets original currency type given in object.
+        complete_url = 'https://openexchangerates.org/api/' + endpoint + "?app_id=" + app_id + "&base=" + base
+
+        # Pull the exchange rates from the api and decode into object.
+        with urllib.request.urlopen(complete_url) as url:
+            exchange_rates = json.loads(url.read().decode())
+        return exchange_rates
+
     def convertCurrency(self, newCurrencyType: str) -> float:
         """
         Get the currency to convert the base currency to target currency.
         :param newCurrencyType: The target currency.
         :return: the total of the converted base currency to target currency.
         """
-        endpoint = "latest.json"
-        app_id = '83c0f1eb005b4de194c05201afe59129'
-        base = self.getCurrencyType()  # Gets original currency type given in object.
         symbol = newCurrencyType
         amount = self.getCurrencyPrice()  # The price to convert to new currency.
 
-        complete_url = 'https://openexchangerates.org/api/' + endpoint + "?app_id=" + app_id + "&base=" + base
-
-        # Pull the exchange rates from the api and decode into object.
-        with urllib.request.urlopen(complete_url) as url:
-            exchange_rates = json.loads(url.read().decode())
-
-        for rate in exchange_rates["rates"]:
-            print(rate)
-        print("From: $" + str(exchange_rates["rates"]) + " TO ¥" + str(exchange_rates["rates"][symbol]))
+        exchange_rates = self.getCurrencies()
 
         total_curr_price = amount * exchange_rates["rates"][symbol]  # Take the amount and multiply by rate
-        print("total: from " + base + " to " + symbol + " " + str(total_curr_price))
-
         return total_curr_price
-    @staticmethod
-    def getrates():

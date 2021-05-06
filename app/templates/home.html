@@ -2,8 +2,8 @@
 {% block content %}
         <article class="media content-section mt-5">
             <div class="d-block">
-                <h1>See What Your Exchange Rate Will Be</h1>
-                <h5>We'll find the nearest currency exchange place in your area.</h5>
+                <h1 class="display-3">See What Your Exchange Rate Will Be.</h1>
+                <h3 class="mb-5">We'll find the nearest currency exchange place in your area.</h3>
                 <form method="POST" action="">
                     {{ form.hidden_tag() }}
                     <div class="form-floating mb-3">
@@ -18,7 +18,7 @@
                         {{ form.amount(class='form-control', placeholder='Amount') }}
                         {{ form.amount.label }}
                     </div>
-                    {{ form.submit(class='btn btn-primary') }}
+                    {{ form.submit(class='btn btn-theme-primary') }}
                 </form>
             </div>
         </article>
