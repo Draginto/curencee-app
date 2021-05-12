@@ -1,11 +1,6 @@
 from flask_login import UserMixin
 from datetime import datetime
-from app import login_manager, db
-
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+from app import db
 
 
 class User(db.Model, UserMixin):
@@ -29,3 +24,14 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+
+class Currency(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    currency_name = db.Column(db.String(3), nullable=False)
+    currency_amount = db.Column(db.DECIMAL, nullable=False)
+    date_updated = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"Currency('{self.currency_name}')"
+

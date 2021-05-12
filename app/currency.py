@@ -2,8 +2,8 @@
 import urllib.request, json
 
 
-class Currency:
-    def __init__(self, originalPrice, currencyType):
+class Curr:
+    def __init__(self, originalPrice=None, currencyType='USD'):
         self.originalPrice = originalPrice
         self.currencyType = currencyType
 
@@ -59,6 +59,9 @@ class Currency:
         amount = self.getCurrencyPrice()  # The price to convert to new currency.
 
         exchange_rates = self.getCurrencies()
-
         total_curr_price = amount * exchange_rates["rates"][symbol]  # Take the amount and multiply by rate
         return total_curr_price
+
+    def toConvertCurrency(self, rate):
+        amount = self.getCurrencyPrice()
+        return amount * rate
