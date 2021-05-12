@@ -1,16 +1,14 @@
 alembic==1.5.8
-argon2-cffi @ file:///C:/ci/argon2-cffi_1596828549974/work
-attrs @ file:///tmp/build/80754af9/attrs_1598374659300/work
+argon2-cffi
+attrs
 backcall==0.2.0
-bcrypt==3.2.0
-beautifulsoup4==4.9.1
 bleach==3.1.5
 blinker==1.4
 brotlipy==0.7.0
 certifi==2020.12.5
 cffi==1.14.0
 chardet==3.0.4
-click @ file:///home/linux1/recipes/ci/click_1610990599742/work
+click
 colorama==0.4.3
 cryptography==2.9.2
 cycler==0.10.0
@@ -19,54 +17,54 @@ defusedxml==0.6.0
 dnspython==2.1.0
 email-validator==1.1.2
 entrypoints==0.3
-Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
+Flask
 Flask-Bcrypt==0.7.1
+Flask-Caching==1.10.1
+Flask-hCaptcha==0.5.4
 Flask-Login==0.5.0
 Flask-Migrate==2.7.0
 Flask-Sitemap==0.3.0
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==0.14.3
 greenlet==1.0.0
-gunicorn==20.1.0
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
-importlib-metadata @ file:///C:/ci/importlib-metadata_1593446525189/work
-ipykernel @ file:///C:/ci/ipykernel_1596208728219/work/dist/ipykernel-5.3.4-py3-none-any.whl
-ipython @ file:///C:/ci/ipython_1598883894321/work
+gunicorn
+idna
+importlib-metadata
+ipykernel
+ipython
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
-jedi @ file:///C:/ci/jedi_1596472767194/work
+jedi
 Jinja2==2.11.2
-jsonschema @ file:///C:/ci/jsonschema_1594363671836/work
-jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1594826976318/work
+jsonschema
+jupyter-client
 jupyter-core==4.6.3
 kiwisolver==1.2.0
 Mako==1.1.4
-MarkupSafe @ file:///C:/ci/markupsafe_1594405949945/work
-matplotlib @ file:///C:/ci/matplotlib-base_1597858387645/work
-mistune @ file:///C:/ci/mistune_1594373272338/work
+MarkupSafe
+matplotlib
+mistune
 mkl-fft==1.1.0
 mkl-random==1.1.1
 mkl-service==2.3.0
-nbconvert @ file:///C:/ci/nbconvert_1594372737468/work
+nbconvert
 nbformat==5.0.7
-notebook @ file:///C:/ci/notebook_1596837179121/work
-numpy @ file:///C:/ci/numpy_and_numpy_base_1596233945180/work
+notebook
 olefile==0.46
 packaging==20.4
-pandas @ file:///C:/ci/pandas_1598371525254/work
 pandocfilters==1.4.2
 parso==0.7.0
-pickleshare @ file:///C:/ci/pickleshare_1594374056827/work
-Pillow @ file:///C:/ci/pillow_1594298234712/work
+pickleshare
+Pillow
 prometheus-client==0.8.0
-prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1598885458782/work
+prompt-toolkit
 psycopg2==2.8.6
-pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pycparser
 Pygments==2.6.1
-pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1594392929924/work
+pyOpenSSL
 pyparsing==2.4.7
 pyrsistent==0.16.0
-PySocks @ file:///C:/ci/pysocks_1594394709107/work
+PySocks
 python-dateutil==2.8.1
 python-editor==1.0.4
 pytimecamp==0.1.12
@@ -74,9 +72,8 @@ pytz==2020.1
 pywin32==227
 pywinpty==0.5.7
 pyzmq==19.0.1
-requests @ file:///tmp/build/80754af9/requests_1592841827918/work
-scipy @ file:///C:/ci/scipy_1597686737426/work
-seaborn==0.10.1
+requests
+scipy
 Send2Trash==1.5.0
 six==1.15.0
 soupsieve==2.0.1
@@ -86,11 +83,10 @@ testpath==0.4.4
 tornado==6.0.4
 traitlets==4.3.3
 urllib3==1.25.9
-wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+wcwidth
 webencodings==0.5.1
-Werkzeug @ file:///home/ktietz/src/ci/werkzeug_1611932622770/work
+Werkzeug
 win-inet-pton==1.1.0
 wincertstore==0.2
 WTForms==2.3.3
 zipp==3.1.0
-flask-hcaptcha
