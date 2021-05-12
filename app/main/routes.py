@@ -4,7 +4,7 @@ from app import cache, db, hcaptcha
 from app.main.forms import ExchangeForm
 from app.currency import Curr
 from app.models import Currency
-
+import os
 main = Blueprint('main', __name__)
 
 
@@ -34,7 +34,7 @@ def home():
         else:
             flash('Please verify through HCaptcha!', 'danger')
             redirect(url_for('main.home'))
-    googleapi = 'AIzaSyCnWoV_CTrVrwj7xFYMW8B9FBJqipCCtac'
+    googleapi = os.environ["GOOGLE_MAP_API"]
     return render_template('home.html', form=form, title='Home', googleapi=googleapi)
 
 
