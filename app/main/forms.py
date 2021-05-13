@@ -3,7 +3,6 @@ from wtforms import StringField, SubmitField, SelectField
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.validators import DataRequired
 from app.models import Currency
-from app import db
 
 def get_all_rates():
     return Currency.query
