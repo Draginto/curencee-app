@@ -16,8 +16,6 @@ def updateRates():
         db.session.add(curr)
     db.session.commit()
 
-updateRates()
-
 @main.route('/', methods=['GET', 'POST'])
 @main.route('/home', methods=['GET', 'POST'])
 def home():
