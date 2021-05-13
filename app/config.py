@@ -5,6 +5,5 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ["SQLALCHEMY_DATABASE_URI"] # Replace with postgresql
     CACHE_TYPE = "SimpleCache"  # Replace with Redis
     CACHE_DEFAULT_TIMEOUT = 300
-    HCAPTCHA_SITE_KEY = os.environ["HCAPTCHA_SITE_KEY"]
-    HCAPTCHA_SITE_SECRET = os.environ["HCAPTCHA_SITE_SECRET"]
-    HCAPTCHA_ENABLED = True
+    RECAPTCHA_PUBLIC_KEY = os.environ["RECAPTCHA_SITE_KEY"]
+    RECAPTCHA_PRIVATE_KEY = os.environ["RECAPTCHA_SITE_SECRET"]
