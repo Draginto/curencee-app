@@ -16,13 +16,14 @@ def updateRates():
         db.session.add(curr)
     db.session.commit()
 
+updateRates()
 
 @main.route('/', methods=['GET', 'POST'])
 @main.route('/home', methods=['GET', 'POST'])
 def home():
     form = ExchangeForm()
     if form.validate_on_submit():
-        if hcaptcha.verify():
+        if form.recaptcha.validate():
             convert_to_curr = Curr(float(form.amount.data))  # Create object with currency in mind.
             curr_id = request.form['to_currency']
             currency = Currency.query.get(curr_id)  # Look in db for this currency.
