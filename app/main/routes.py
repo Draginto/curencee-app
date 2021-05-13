@@ -30,7 +30,7 @@ def home():
             form.amount.data = total_amount
             flash('Converted successfully', 'success')
         else:
-            flash('Please verify through HCaptcha!', 'danger')
+            flash('Please verify through ReCaptcha!', 'danger')
             redirect(url_for('main.home'))
     googleapi = os.environ["GOOGLE_MAP_API"]
     return render_template('home.html', form=form, title='Home', googleapi=googleapi)
