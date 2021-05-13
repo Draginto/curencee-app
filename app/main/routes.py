@@ -7,8 +7,6 @@ from app.models import Currency
 import os
 main = Blueprint('main', __name__)
 
-request.headers['Content-Security-Policy'] = "script-src 'self' https://hcaptcha.com, https://*.hcaptcha.com"
-
 @cache.cached(timeout=14400, key_prefix='get_all_rates')
 def updateRates():
     currency = Curr()
