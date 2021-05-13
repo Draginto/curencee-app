@@ -21,7 +21,7 @@ def updateRates():
 def home():
     form = ExchangeForm()
     if form.validate_on_submit():
-        if form.recaptcha.validate():
+        if form.recaptcha.validate:
             convert_to_curr = Curr(float(form.amount.data))  # Create object with currency in mind.
             curr_id = request.form['to_currency']
             currency = Currency.query.get(curr_id)  # Look in db for this currency.
