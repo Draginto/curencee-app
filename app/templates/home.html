@@ -19,7 +19,7 @@
                         {{ form.amount.label }}
                     </div>
                     {{ form.recaptcha }}
-                    {{ form.submit(class='btn btn-theme-primary', onclick="scrollWindow();") }}
+                    {{ form.submit(class='btn btn-theme-primary mt-3', onclick="scrollWindow();") }}
                 </form>
                 <p class="small mt-5"><strong>Note:</strong> We are currently only converting from USD at the moment.</p>
                 {% if form.recaptcha.validate %}
