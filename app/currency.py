@@ -1,4 +1,5 @@
 # This file will store the currency class alongside the necessary logic needed for conversion.
+import os
 import urllib.request, json
 
 
@@ -40,7 +41,7 @@ class Curr:
 
     def getCurrencies(self) -> str:
         endpoint = "latest.json"
-        app_id = '83c0f1eb005b4de194c05201afe59129'
+        app_id = os.environ["CURRENCY_API"]
         base = self.getCurrencyType()  # Gets original currency type given in object.
         complete_url = 'https://openexchangerates.org/api/' + endpoint + "?app_id=" + app_id + "&base=" + base
 
