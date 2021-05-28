@@ -7,7 +7,7 @@ from app.models import Currency
 import os
 main = Blueprint('main', __name__)
 
-@cache.cached(timeout=14400, key_prefix='get_all_rates')
+@cache.cached(timeout=14400, key_prefix='update_rates')
 def updateRates():
     currency = Curr()
     exchange_rates = currency.getCurrencies()
@@ -20,6 +20,7 @@ def updateRates():
 @main.route('/home', methods=['GET', 'POST'])
 def home():
     form = ExchangeForm()
+    rates = updateRates()
     if form.validate_on_submit():
         if form.recaptcha.validate:
             convert_to_curr = Curr(float(form.amount.data))  # Create object with currency in mind.
