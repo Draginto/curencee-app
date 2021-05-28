@@ -37,8 +37,6 @@ itsdangerous==1.1.0
 jedi
 Jinja2==2.11.2
 jsonschema
-jupyter-client
-jupyter-core==4.6.3
 kiwisolver==1.2.0
 Mako==1.1.4
 MarkupSafe
