@@ -55,7 +55,6 @@ prometheus-client==0.8.0
 prompt-toolkit
 psycopg2==2.8.6
 pycparser
-Pygments==2.6.1
 pyOpenSSL
 pyparsing==2.4.7
 pyrsistent==0.16.0
