@@ -35,7 +35,7 @@ ipython
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
 jedi
-Jinja2==2.11.2
+jinja2>=2.11.3
 jsonschema
 kiwisolver==1.2.0
 Mako==1.1.4
